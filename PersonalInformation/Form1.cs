@@ -16,5 +16,22 @@ namespace PersonalInformation
         {
             InitializeComponent();
         }
+
+        InputForm inputForm;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            inputForm = new InputForm();
+            inputForm.ShowDialog();
+            DisplayInfo();
+        }
+
+        private void DisplayInfo()
+        {
+            foreach(PersonalInfo p in inputForm.infoList)
+            {
+                txtOutput.Text += p.ToString();
+                txtOutput.Text += Environment.NewLine;
+            }
+        }
     }
 }
